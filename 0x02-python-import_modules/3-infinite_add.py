@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import sys
-
 def arg_add(args):
     result = sum(int(a) for a in args )
     print(result)
