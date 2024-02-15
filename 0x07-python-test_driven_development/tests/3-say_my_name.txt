@@ -1,0 +1,32 @@
+Testing for 3-say_my_name module
+This module, returns the first name and last name.
+
+ >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+    Args:
+    first_name: the first name
+    last_name: the last name
+
+    Returns:
+    My name is <first name> <last name>
+
+    Raises:
+    TypeError: if datatype is not string
+
+Test 1
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+Test 2
+>>> say_my_name("John", 4)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+Test 3
+>>> say_my_name(5, 4)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+Test 4
+>>> say_my_name("Char")
+My name is Char 
