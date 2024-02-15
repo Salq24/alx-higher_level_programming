@@ -1,0 +1,36 @@
+Testing for 4-print_square module
+This module, prints a square with the character '#'.
+
+ >>> print_square = __import__('4-print_square').print_square
+
+        Args:
+        size: size length of the square
+
+        Returns:
+        A square with thecharacter, '#'
+
+        Raises:
+        TypeError: if size is not an integer
+        ValueError: if size < 0
+
+Test 1
+>>> print_square(4)
+####
+####
+####
+####
+
+Test 2
+>>> print_square(4.5)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+Test 3
+>>> print_square(-6)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+Test 4
+>>> print_square('h')
+Traceback (most recent call last):
+TypeError: size must be an integer
