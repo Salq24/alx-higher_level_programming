@@ -1,0 +1,59 @@
+Testing for 2-matrix_divided module
+
+This module, divides all elements of a matrix.
+
+function is ''matrix_divided(matrix, div)''
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+
+args:
+matrix: list of lists of integers or floats
+div: must be a number, (int or float).
+
+Returns:
+new matrix as list of lists.
+
+Errors raised:
+TypeError if it is not a list of lists of integers or floats.
+TypeError if div is not a number
+ZeroDivisionError if div == 0
+
+This works with integers.
+>>> matrix = [[1, 2, 3],[4, 5, 6]]
+
+>>> print(matrix_divided(matrix, 2))
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+>>> print(matrix)
+[[1, 2, 3], [4, 5, 6]]
+
+With floats, even negative numbers.
+>>> matrix = [[2, 4, 10.4], [9.0, -16, 20]]
+>>> print(matrix_divided(matrix, 3))
+[[0.67, 1.33, 3.47], [3.0, -5.33, 6.67]]
+>>> print(matrix)
+[[2, 4, 10.4], [9.0, -16, 20]]
+
+With different list lengths:
+>>> matrix = [[19, 20, 8], [15, 40]]
+>>> print(matrix_divided(matrix, 2))
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+with strings in the list:
+>>> matrix = [[19, 20, 8], [15, "Hep", 40]]
+>>> print(matrix_divided(matrix, 2))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Dividing by 0:
+>>> matrix = [[19, 20, 8], [15, 6, 40]]
+>>> print(matrix_divided(matrix, 0))
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+Rounded to 2 decimal places:
+>>> matrix = [[124.9867, 200, 90], [1800, 7, 5]]
+>>> print(matrix_divided(matrix, 2))
+[[62.49, 100.0, 45.0], [900.0, 3.5, 2.5]]
