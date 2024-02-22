@@ -4,6 +4,8 @@ This module has a function, append_write, which
 appends a string at the end of a text file
 (utf8) and returns the num of xters added
 """
+
+
 def append_write(filename="", text=""):
     """
     This is the function. We did not manage file permission
