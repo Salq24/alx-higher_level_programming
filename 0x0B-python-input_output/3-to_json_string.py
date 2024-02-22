@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-import json
 """
 This module makes a function, to_json_string,
 which returns the JSON rep of an object
 or string
 """
+import json
+
 
 
 def to_json_string(my_obj):
