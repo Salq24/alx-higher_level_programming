@@ -6,6 +6,10 @@ that returns a list of lists of integers
 
 
 def pascal_triangle(n):
+    """
+    This is the function, with
+    arg, n
+    """
     if n <= 0:
         return []
 
