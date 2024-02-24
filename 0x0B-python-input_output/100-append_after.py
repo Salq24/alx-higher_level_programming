@@ -14,14 +14,12 @@ def append_after(filename="", search_string="", new_string=""):
     if not filename or not search_string\
             or not new_string:
         return
-
+    lns = ""
     with open(filename, 'r+') as file:
-        lns = file.readlines()
-        file.seek(0)
 
-        for ln in lns:
-            file.write(ln)
+        for ln in file:
+            lns += ln
             if search_string in ln:
-                file.write(new_string + '\n')
-
-        file.truncate()
+                lns += new_string
+    with open(filename, "w") as wrt:
+        wrt.write(lns)
