@@ -7,6 +7,10 @@ containing a specific string
 
 
 def append_after(filename="", search_string="", new_string=""):
+    """
+    This is the function, with args
+    filename, search_string, new_string
+    """
     if not filename or not search_string\
         or not new_string:
         return
