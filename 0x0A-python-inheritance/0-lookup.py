@@ -5,6 +5,7 @@ that returns a list of available attributes
 and methods of an object
 """
 
+
 def lookup(obj):
     """This is the function"""
     return dir(obj)
