@@ -53,7 +53,7 @@ class Base:
         if cls.__name__ == 'Rectangle':
             second = cls(1, 1)
         elif cls.__name__ == 'Square':
-            second = cls(1, 1)
+            second = cls(1)
         else:
             return None
         second.update(**dictionary)
