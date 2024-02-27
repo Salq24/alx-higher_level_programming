@@ -100,6 +100,13 @@ class Rectangle(Base):
             for k, v in kwargs.items():
                 setattr(self, k, v)
 
+    def to_dictionary(self):
+        """returns the dict rep"""
+        rect_dict = {'id': self.id, 'width': self.__width,
+                     'height': self.__height, 'x': self.__x,
+                     'y': self.__y}
+        return rect_dict
+
     def __str__(self):
         """returns the str rep of the rect instance"""
         return "[Rectangle] ({}) {}/{} - {}/{}".\
