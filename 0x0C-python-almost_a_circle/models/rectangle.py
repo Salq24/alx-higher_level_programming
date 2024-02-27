@@ -2,6 +2,7 @@
 """
 This module has a class, Rectangle
 """
+
 from models.base import Base
 
 
@@ -13,29 +14,29 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """initializes the attributes of a rectangle"""
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
-# getters
+    # getters
     @property
     def width(self):
-        """gives the width"""
+        """gives the width of the rect"""
         return self.__width
 
     @property
     def height(self):
-        """gives the height"""
+        """gives the height of the rect"""
         return self.__height
 
     @property
     def x(self):
-        """gives the x"""
+        """gives the x of the rect"""
         return self.__x
 
     @property
     def y(self):
-        """gives the y"""
+        """gives the y of the rect"""
         return self.__y
