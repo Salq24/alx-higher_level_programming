@@ -85,8 +85,10 @@ class Rectangle(Base):
         """prints in stdout the rect instance,
         with the char, #
         """
-        for i in range(self.height):
-            print("#" * self.width)
+        for i in range(self.y):
+            print()
+        for x in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """returns the str rep of the rect instance"""
