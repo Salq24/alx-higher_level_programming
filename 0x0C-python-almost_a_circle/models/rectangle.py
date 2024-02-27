@@ -90,18 +90,15 @@ class Rectangle(Base):
         for x in range(self.height):
             print(" " * self.x + "#" * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
-        if len(args) >= 1:
-            self.id = args[0]
-        if len(args) >= 2:
-            self.width = args[1]
-        if len(args) >= 3:
-            self.height = args[2]
-        if len(args) >= 4:
-            self.x = args[3]
-        if len(args) >= 5:
-            self.y = args[4]
+        if args:
+            rect_attr = ["id", "width", "height", "x", "y"]
+            for x, arg in enumerate(args):
+                setattr(self, rect_attr[1], arg)
+        elif kwargs:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
 
     def __str__(self):
         """returns the str rep of the rect instance"""
