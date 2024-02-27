@@ -28,3 +28,13 @@ class Square(Rectangle):
         """Returns the str rep of the instance"""
         return "[Square] ({}) {}/{} - {}".\
             format(self.id, self.x, self.y, self.height)
+
+    def update(self, *args, **kwargs):
+        """assigns attributes to the arguments"""
+        if args:
+            sq_attrs = ["id", "size", "x", "y"]
+            for x, ar in enumerate(args):
+                setattr(self, sq_attrs[x], ar)
+        elif kwargs:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
