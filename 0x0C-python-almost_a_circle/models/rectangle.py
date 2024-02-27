@@ -3,8 +3,8 @@
 This module has a class, Rectangle
 """
 
-
 from models.base import Base
+
 
 class Rectangle(Base):
     """This is the class, Rectangle, that
