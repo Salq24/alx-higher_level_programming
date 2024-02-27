@@ -2,6 +2,8 @@
 """
 This module has a class, Base
 """
+
+
 class Base:
     """This is the class,
     with private class attribute and
