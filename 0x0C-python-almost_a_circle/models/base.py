@@ -7,6 +7,7 @@ This module has a class, Base
 import json
 import csv
 import os
+import turtle
 
 
 class Base:
@@ -105,3 +106,43 @@ class Base:
                 return [cls.create(**d) for d in dict_list]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draws all the rects and squares"""
+        scrn = turtle.Screen()
+        scrn.setup(width=700, height=500)
+        scrn.title("Rectangles and Squares")
+
+        # Create a Turtle object
+        tut = turtle.Turtle()
+
+        # Draw rectangles
+        tut.penup()
+        tut.color("blue")  # Set color for rectangles
+        for rect in list_rectangles:
+            tut.goto(rect.x, rect.y)
+            tut.pendown()
+            tut.forward(rect.width)
+            tut.left(90)
+            tut.forward(rect.height)
+            tut.left(90)
+            tut.forward(rect.width)
+            tut.left(90)
+            tut.forward(rect.height)
+            tut.penup()
+
+        # Draw squares
+        tut.penup()
+        tut.color("green")  # Set color for squares
+        for square in list_squares:
+            tut.goto(square.x, square.y)
+            tut.pendown()
+            for i in range(4):
+                tut.forward(square.size)
+                tut.left(90)
+            tut.penup()
+
+        # Hide the Turtle and display the screen
+        tut.hideturtle()
+        scrn.mainloop()
