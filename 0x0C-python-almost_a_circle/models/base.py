@@ -5,6 +5,8 @@ This module has a class, Base
 
 
 import json
+import csv
+import os
 
 
 class Base:
@@ -69,4 +71,37 @@ class Base:
                 dict_list = cls.from_json_string(json_str)
                 return [cls.create(**dic) for dic in dict_list]
         except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in csv"""
+        filenm = cls.__name__ + ".csv"
+        with open(filenm, 'w', newline="") as file:
+            if list_objs is not None or list_objs == []:
+                file.write("[]")
+            else:
+                if cls.__name__ == 'Rectangle':
+                    nms = ["id", "width", "height", "x", "y"]
+                else:
+                    nms = ["id", "size", "x", "y"]
+                writter = csv.DictWriter(file, fieldnames=nms)
+                for obj in list_objs:
+                    writter.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes in csv"""
+        filenm = cls.__name__ + ".csv"
+        try:
+            with open(filenm, "r", newline="") as file:
+                if cls.__name__ == "Rectangle":
+                    nms = ["id", "width", "height", "x", "y"]
+                else:
+                    nms = ["id", "size", "x", "y"]
+                dict_list = csv.DictReader(file, fieldnames=nms)
+                dict_list = [dict([k, int(v)] for k, v in d.items())
+                             for d in dict_list]
+                return [cls.create(**d) for d in dict_list]
+        except IOError:
             return []
