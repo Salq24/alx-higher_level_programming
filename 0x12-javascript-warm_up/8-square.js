@@ -2,7 +2,7 @@
 
 const conv = process.argv[2];
 const num = parseInt(conv);
-const sq = 'X'
+const sq = 'X';
 
 if (!isNaN(num)) {
   for (let x = 0; x < num; x++) {
