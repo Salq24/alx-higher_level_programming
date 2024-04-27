@@ -1,14 +1,16 @@
 #!/usr/bin/python3
 
 """
-This lists all states from the database hbtn_0e_0_usa
+This lists all states from the
+database hbtn_0e_0_usa
 """
 
 import MySQLdb
 import sys
 
 if __name__ == '__main__':
-    """Connect to ythe server"""
+    """Connect to ythe Mysql
+    server"""
     con_db = MySQLdb.connect(
             host="localhost", user=sys.argv[1],
             port=3306, passwd=sys.argv[2], db=sys.argv[3])
