@@ -19,7 +19,7 @@ if __name__ == '__main__':
     cursor = con_db.cursor()
 
     cursor.execute("SELECT * FROM states WHERE name LIKE BINARY\
-            %(name) ORDER BY states.id ASC", {'name': sys.argv[4]})
+            %(name)s ORDER BY states.id ASC", {'name': sys.argv[4]})
 
     states = cursor.fetchall()
 
