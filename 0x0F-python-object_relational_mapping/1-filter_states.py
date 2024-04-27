@@ -15,7 +15,7 @@ if __name__ == '__main__':
     cursor = con_db.cursor()
 
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'\
-            ORDER BY id ASC")
+            ORDER BY states.id ASC")
 
     states = cursor.fetchall()
 
