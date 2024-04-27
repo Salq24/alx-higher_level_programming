@@ -11,7 +11,7 @@ from model_state import Base, State
 if __name__ == '__main__':
     """Access the database"""
     link_db = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-        argv[1], argv[2], argv[3])
+        sys.argv[1], sys.argv[2], sys.argv[3])
     engine = create_engine(link_db)
 
     DBSession = sessionmaker(bind=engine)
