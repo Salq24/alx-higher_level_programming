@@ -16,12 +16,12 @@ if __name__ == '__main__':
 
     cursor = con_db.cursor()
 
-    cursor.execute("SELECT cities.id, cities.name FROM\
+    cursor.execute("""SELECT cities.id, cities.name FROM\
             cities JOIN states ON cities.state_id = states.id\
             WHERE states.name LIKE BINARY %(state_name)s\
-            ORDER BY cities.id ASC", {'state_name': sys.argv[4]})
+            ORDER BY cities.id ASC""", {'state_name': sys.argv[4]})
 
     cities = cursor.fetchall()
 
-    if row is not None:
-        print(", ".join([r[1] for r in row]))
+    if cities is not None:
+        print(", ".join([city[1] for city in cities]))
