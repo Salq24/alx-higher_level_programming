@@ -23,5 +23,5 @@ if __name__ == '__main__':
 
     cities = cursor.fetchall()
 
-    for row in cities:
+    if row is not None:
         print(", ".join([r[1] for r in row]))
