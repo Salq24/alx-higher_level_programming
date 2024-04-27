@@ -16,7 +16,9 @@ if __name__ == '__main__':
 
     cursor = con_db.cursor()
 
-    cursor.execute("SELECT * FROM cities ORDER BY cities.id ASC")
+    cursor.execute("SELECT cities.id, cities.name, states.name, FROM\
+            cities JOIN states ON cities.statd_id = states.id ORDER\
+            BY cities.id ASC")
 
     cities = cursor.fetchall()
 
