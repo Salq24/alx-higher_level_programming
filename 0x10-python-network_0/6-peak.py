@@ -13,15 +13,15 @@ def find_peak(list_of_integers):
     while True:
         d_mid = d_mid // 2
 
-        if middle < d_lent - 1 and list_of_integers[middle] < list_of_integers[middle + 1] :
+        if middle < d_lent - 1 and
+        list_of_integers[middle] < list_of_integers[middle + 1]:
             if d_mid // 2 == 0:
                 d_mid = 2
                 middle = middle + d_mid // 2
-        elif d_mid > 0 and list_of_integers[middle] < list_of_integers[middle - 1]:
+        elif d_mid > 0 and
+        list_of_integers[middle] < list_of_integers[middle - 1]:
             if d_mid // 2 == 0:
                 d_mid = 2
             middle = middle - d_mid // 2
         else:
             return (list_of_integers[middle])
-
-
