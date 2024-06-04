@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//reads and prints file contene
+// reads and prints file contene
 
 
 const fsys = require('fs');
